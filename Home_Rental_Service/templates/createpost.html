@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/poststyle.css' %}">
+</head>
+<body>
+    <header>
+        <div class="leftnav">
+            <a href="../home"><i class="fa fa-arrow-left"></i></a> 
+            <p>Create your post</p>
+        </div>
+    </header>
+    <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="hname">
+                <label>House Name:</label>
+                <input type="text" name="hname" required>
+            </div>
+            <div class="haddress">
+                <label> House Address: </label>
+                <select name="division" id="division">
+                    <option value="">Division</option>
+                    <option value="dha">Dhaka</option>
+                    <option value="mym">Mymensingh</option>
+                    <option value="syl">Sylhet</option>
+                </select>
+                <select name="district" id="district">
+                    <option value="">District</option>
+                    <option value="syl">Sylhet</option>
+                    <option value="sum">Sunamganj</option>
+                    <option value="mou">Moulovibazar</option>
+                    <option value="hab">Habiganj</option>
+                </select>
+                <select name="upazila" id="upazila">
+                    <option value="">Upazila</option>
+                    <option value="sss">Sylhet Sadar</option>
+                    <option value="ons">Osmani Nagar</option>
+                    <option value="bbs">Beanibazar</option>
+                </select>
+            </div>
+            <div class="addrdesc">
+                <label>Brief area description:</label>
+                <input type="text" name="addrdesc" placeholder="e.g. Topobon Residential Area, Akhaliya">
+            </div>      
+            <h3>Give some other important house info:</h3>
+            <div class="hinf">
+                <div class="nrooms">
+                    <label>No of Rooms:</label>
+                    <input type="number" name="rooms" required>
+                </div>
+                <div class="nbedrooms">
+                    <label>No of Bedrooms:</label>
+                    <input type="number" name="bedrooms" required>
+                </div>
+                <div class="nbrooms">
+                    <label>No of Bathrooms:</label>
+                    <input type="number" name="bathrooms" required>
+                </div>
+                <div class="gfacility">
+                    <label>Gas facility: </label>
+                    <input type="checkbox" name="gfacility"> 
+                </div>
+                <div class="sdesc">
+                    <label>Small description about your house:</label>
+                    <textarea name="sdesc" cols="50" rows="10" placeholder="Write here..."></textarea>
+                </div>
+            </div>
+            <div class="price">
+                <label> Rent per month: </label>
+                <input type="number" name="price" required>
+            </div>
+            <div class="contact">
+                <h3>Give your contact information:</h3>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label>Phone No:</label>
+                    <input type="number" name="phone">
+                </div>
+            </div>
+            <div class="addimg">
+                <h3>Add some images:</h3>
+                <input type="file" name="imgadd" onchange="readURL(this)" accept="Image/*" multiple>
+            </div>
+            <div class="btn">
+                <button class="subbtn">Post</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

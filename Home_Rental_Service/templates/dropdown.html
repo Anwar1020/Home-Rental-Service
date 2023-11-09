@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/dropdownstyle.css' %}">
+</head>
+<body>
+    <div class="container">
+    <form name="form1" id="form1" action="/action_page.php">
+      <div class="division">
+        Division: <select name="subject" id="division">
+          <option value="" selected="selected">Select division</option>
+        </select>
+      </div>
+        <div class="district">
+           District: <select name="topic" id="district">
+            <option value="" selected="selected">Please select Division first</option>
+          </select>
+        </div>
+        <div class="upazila">
+          Upazila: <select name="subtopic" id="upazila">
+          <option value="" selected="selected">Please select District first</option>
+        </select>
+        </div>
+        <div class="subbtn">
+          <input type="submit" value="Search">
+        </div>
+      </form>
+    </div>
+      <script src = "{% static 'js/dropdownscripts.js' %}"></script>
+</body>
+</html>
